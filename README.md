@@ -46,6 +46,121 @@ A speed number is the posted limit on the nearby road, not the speed that trigge
 </tr>
 </table>
 
+## 下載後怎麼執行　Run it after you download the source
+
+沒有可直接點兩下的程式。下載的是網站原始碼，要先裝 Node.js，再在解壓縮後的資料夾啟動。啟動後用瀏覽器開，不要關掉那個黑色視窗。
+
+There is no double-click program. The download is the website source. Install Node.js, start it in the unzipped folder, then open a browser. Leave the terminal window open.
+
+<table>
+<tr>
+<th width="50%">中文</th>
+<th width="50%">English</th>
+</tr>
+<tr>
+<td valign="top">
+
+**要先裝一次**
+
+1. 打開 [Node.js 官網](https://nodejs.org/)，下載並安裝 **22** 版（寫著 22 的 LTS 即可）。
+2. 安裝時若看到 “Add to PATH”，請保持勾選。
+3. 安裝完成後，新開一個「命令提示字元」或 PowerShell，輸入 `node -v` 後按 Enter。應出現 `v22` 開頭的版本。若出現「不是內部或外部命令」，關掉視窗再試一次；還是不行就重開電腦。
+
+**下載整包**
+
+4. 打開這個 GitHub 頁面，按綠色 **Code**，選 **Download ZIP**。
+5. 壓縮檔多半在「下載」資料夾，檔名類似 `brave-coral-earth-onyx-main.zip`。
+6. 對壓縮檔按右鍵，選「解壓縮全部」。解完後要看得到 **`package.json`** 和 `src` 資料夾。若只看到另一層資料夾，再點進去，直到 `package.json` 就在眼前。
+
+**啟動**
+
+7. 在看得到 `package.json` 的那個資料夾裡，點上面的網址列，輸入 `cmd`，按 Enter。會開一個黑窗，而且已經在正確的資料夾。
+8. 輸入下面這行，按 Enter，等它跑完（第一次可能要數分鐘，需要網路）：
+
+```
+npm install
+```
+
+9. 完成後再輸入，按 Enter：
+
+```
+npm run dev
+```
+
+10. 黑窗出現 `Local:` 以及 `http://localhost:8080/` 後，用 Chrome 或 Edge 打開：
+
+[http://localhost:8080/](http://localhost:8080/)
+
+應看到「日本全國 / 測速點搜尋」。地圖底圖也要網路才載入得出來。
+
+**使用時**
+
+- 黑窗要一直開著。關掉它，網頁就停了。
+- 要結束時，在黑窗按 `Ctrl + C`，若問是否終止，輸入 `Y` 再按 Enter。
+- 下次不用重裝 Node，也不必再 `npm install`（除非資料夾換了）。進同一個資料夾，再執行一次 `npm run dev`，然後開同一個網址。
+- 不要自己做 `.env`，也不要設定 `DATABASE_URL`。這個搜尋頁不需要資料庫帳號。
+
+**常見打不開**
+
+- `npm` 不是內部或外部命令：Node 沒進 PATH。重開命令提示字元，或重裝 Node.js 22。
+- `npm install` 說找不到 `package.json`：視窗不在解壓縮後的那一層。用第 7 步的方式再開一次。
+- 網址打不開，或寫 port 8080 already in use：上次的黑窗還開著。找到它按 `Ctrl + C`，或重開機後再執行 `npm run dev`。
+- 頁面有了但地圖是灰的：電腦沒有網路，或防火牆擋住地圖圖磚。清單仍可搜尋。
+
+</td>
+<td valign="top">
+
+**Install this once**
+
+1. Download and install **Node.js 22** from [nodejs.org](https://nodejs.org/) (the LTS build whose version starts with 22).
+2. If the installer offers “Add to PATH”, leave it checked.
+3. Open a new Command Prompt or PowerShell and run `node -v`. You should see a version starting with `v22`. If the command is not recognized, close the window and try again, then restart the computer.
+
+**Download the whole package**
+
+4. On this GitHub page, click the green **Code** button and choose **Download ZIP**.
+5. The file is usually in Downloads, named like `brave-coral-earth-onyx-main.zip`.
+6. Right-click it and choose Extract All. After extracting, you must see **`package.json`** and a `src` folder. If you only see another folder, open that folder until `package.json` is right there.
+
+**Start it**
+
+7. Open the folder that contains `package.json`. Click the address bar, type `cmd`, and press Enter. A terminal opens already in that folder.
+8. Run this and wait until it finishes (the first time can take several minutes, and it needs the internet):
+
+```
+npm install
+```
+
+9. Then run:
+
+```
+npm run dev
+```
+
+10. When the terminal shows `Local:` and `http://localhost:8080/`, open Chrome or Edge at:
+
+[http://localhost:8080/](http://localhost:8080/)
+
+You should see the Japan speed-camera search. The map tiles also need a network connection.
+
+**While you use it**
+
+- Leave the terminal open. Closing it stops the site.
+- To stop, press `Ctrl + C` in that window. If it asks for confirmation, press `Y` and Enter.
+- Next time you do not reinstall Node, and you do not run `npm install` again unless you extracted a new copy. Open the same folder, run `npm run dev`, and open the same address.
+- Do not create a `.env` file and do not set `DATABASE_URL`. The search page does not need a database login.
+
+**If it does not open**
+
+- `npm` is not recognized: Node is not on PATH. Open a new terminal, or reinstall Node.js 22.
+- `npm install` cannot find `package.json`: the terminal is in the wrong folder. Repeat step 7.
+- The address fails, or the terminal says port 8080 is already in use: an older terminal is still running. Press `Ctrl + C` there, or restart the computer and run `npm run dev` again.
+- The page loads but the map is gray: the computer is offline, or a firewall is blocking map tiles. Search in the list still works.
+
+</td>
+</tr>
+</table>
+
 ## 使用說明　How to use
 
 <table>
