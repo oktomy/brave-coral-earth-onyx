@@ -102,4 +102,22 @@
     scroll-behavior: auto !important;
     transition: none !important;
   }
+
+  .warn-live {
+    animation: none;
+  }
+}
+
+@keyframes warn-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-amber) 50%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+.warn-live {
+  animation: warn-pulse 1.2s ease-out infinite;
 }

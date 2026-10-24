@@ -13,7 +13,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       {
         name: "description",
-        content: "搜尋日本全國測速照相位置，並匯出到 Google 我的地圖。",
+        content: "接近日本測速照相時警示，也可搜尋全國測速點並匯出到 Google 我的地圖。不是警察官方清單。",
       },
       { name: "theme-color", content: "#12151a" },
     ],

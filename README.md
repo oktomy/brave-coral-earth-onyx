@@ -1,7 +1,7 @@
 # 日本測速點　Japan Speed Cameras
 
-搜尋日本全國測速照相位置，並匯出到 Google 我的地圖。不是警察官方清單。  
-Search speed-camera locations across Japan and export them to Google My Maps. This is not an official police list.
+開車接近日本測速照相時警示，並可先列出路線沿途的測速，再交給 Google 地圖導航。也可搜尋全國位置，匯出到 Google 我的地圖。不是警察官方清單。  
+Warns as you approach a speed camera in Japan, lists cameras along a driving route, then hands turn-by-turn directions to Google Maps. You can also search the nationwide points and export them to Google My Maps. This is not an official police list.
 
 資料時間 Data as of：2026-10　·　目前 2,666 筆、47 個都道府縣　2,666 points across all 47 prefectures
 
@@ -15,7 +15,7 @@ Search speed-camera locations across Japan and export them to Google My Maps. Th
 <tr>
 <td valign="top">
 
-這個工具用來查日本測速照相的公開位置，並把選到的點做成 KML 或 CSV，匯入 [Google 我的地圖](https://www.google.com/maps/d/)。
+這個工具有兩件事。開車時，首頁會依你的位置，在接近測速點時發出提示音和語音。輸入目的地後，會列出開車路線兩旁大約 350 公尺內的測速；轉彎導航交給 Google 地圖。另一頁用來查公開位置，並把選到的點做成 KML 或 CSV，匯入 [Google 我的地圖](https://www.google.com/maps/d/)。
 
 資料有三層：
 
@@ -30,7 +30,7 @@ Search speed-camera locations across Japan and export them to Google My Maps. Th
 </td>
 <td valign="top">
 
-This tool looks up publicly reported speed-camera locations in Japan and turns the points you choose into KML or CSV for [Google My Maps](https://www.google.com/maps/d/).
+This tool does two things. While you drive, the first page beeps and speaks as you approach a camera. Enter a destination and it lists cameras within about 350 metres of the driving line; turn-by-turn navigation stays in Google Maps. The other page looks up the public points and turns the ones you choose into KML or CSV for [Google My Maps](https://www.google.com/maps/d/).
 
 There are three layers:
 
@@ -91,7 +91,7 @@ npm run dev
 
 [http://localhost:8080/](http://localhost:8080/)
 
-應看到「日本全國 / 測速點搜尋」。地圖底圖也要網路才載入得出來。
+應看到「行車警示」。另一個分頁是「地圖搜尋」。地圖底圖也要網路才載入得出來。規劃沿途測速時也要網路；已經定位之後，附近警示可以離線比對。
 
 **使用時**
 
@@ -141,7 +141,7 @@ npm run dev
 
 [http://localhost:8080/](http://localhost:8080/)
 
-You should see the Japan speed-camera search. The map tiles also need a network connection.
+You should see the driving alert. The other tab is the map search. The map tiles also need a network connection. Planning cameras along a route also needs the network. Once you have a location, nearby alerts can be matched offline.
 
 **While you use it**
 
@@ -161,7 +161,44 @@ You should see the Japan speed-camera search. The map tiles also need a network 
 </tr>
 </table>
 
-## 使用說明　How to use
+## 行車警示與導航　Driving alert and navigation
+
+<table>
+<tr>
+<th width="50%">中文</th>
+<th width="50%">English</th>
+</tr>
+<tr>
+<td valign="top">
+
+1. 打開首頁「行車警示」，按「開始定位」，允許瀏覽器使用位置。人要在日本，附近才會對到這些點。
+2. 接近時會響，並顯示距離。可改警示距離、只報前方、語音和提示音。
+3. 在「導航」輸入目的地，例如「高松站」，按「列出沿途測速」。清單是路線兩旁約 350 公尺內的點，由近到遠。
+4. 按「用 Google 地圖導航」會打開 Google 地圖的開車導航。這個網站不負責轉彎指示。
+5. 要一邊看地圖一邊聽警示：在 Chrome 按「浮在 Google 地圖上」。若浮窗失敗，用手機多工鍵把這個畫面放上面、地圖放下面。
+6. 沒有定位時可按「試跑警示」，聽一段接近測速點的示範，那不是你的位置。
+7. 關掉這個分頁或瀏覽器，警示就停了。它不能裝成一直在背景響的手機 App。
+
+路線是公開路網算出來的參考線，不是 Google 的導航路徑，也可能和你實際走的交流道不同。沿途清單同樣不是官方相機位置。
+
+</td>
+<td valign="top">
+
+1. Open the Driving alert page and tap Start location. Allow the browser to use your position. You need to be in Japan for these points to match the road around you.
+2. It beeps and shows the distance as you approach. You can change the warning distance, ahead-only, voice, and tones.
+3. Under Navigation, enter a destination such as Takamatsu Station and tap List cameras along the route. The list is points within about 350 metres of the driving line.
+4. Use Google Maps to navigate opens Google Maps driving navigation. This site does not give turn-by-turn instructions.
+5. To keep the alert visible beside the map, tap Float above Google Maps in Chrome. If the float window is not available, use the phone’s split screen: this page on top, Maps below.
+6. Without a location, Demo plays one approach. That is not your position.
+7. Closing the tab or the browser stops the alert. This is not a phone app that keeps warning in the background.
+
+The line is a reference route from the public road network, not Google’s path, and it may not match the interchange you actually take. Cameras along it are not an official list either.
+
+</td>
+</tr>
+</table>
+
+## 地圖搜尋與匯出　Search and export
 
 <table>
 <tr>
