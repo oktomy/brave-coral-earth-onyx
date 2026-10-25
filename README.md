@@ -60,7 +60,7 @@ This is not a Play Store app. It installs on Android 8 or newer. From 1.1, the f
 <tr>
 <td valign="top">
 
-1. 打開 [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases)，下載 `日本測速導航` 的 APK。
+1. 打開 [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases)，下載 `jp-speed-nav-1.1.apk`。
 2. 在手機打開該檔。若系統詢問，允許這次安裝。
 3. 若手機拒絕蓋過舊版，先移除舊的「日本測速導航」再裝。
 4. 允許定位和通知，按「開始警示」。人在日本、App 開著才會在路上響。
@@ -73,7 +73,7 @@ This is not a Play Store app. It installs on Android 8 or newer. From 1.1, the f
 </td>
 <td valign="top">
 
-1. Open [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases) and download the `日本測速導航` APK.
+1. Open [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases) and download `jp-speed-nav-1.1.apk`.
 2. Open the file on the phone. If Android asks, allow this install.
 3. If the phone refuses to replace an older copy, remove the old “日本測速導航” app and install again.
 4. Allow location and notifications, then tap Start warning. You need to be in Japan, with the app running, for it to alert on the road.
