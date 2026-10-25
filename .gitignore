@@ -3,3 +3,12 @@ node_modules/
 .github_repo
 .env
 .env.*
+
+# Android app build output. Source lives in android/.
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/.cxx/

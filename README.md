@@ -1,9 +1,91 @@
 # 日本測速點　Japan Speed Cameras
 
-開車接近日本測速照相時警示，並可先列出路線沿途的測速，再交給 Google 地圖導航。也可搜尋全國位置，匯出到 Google 我的地圖。不是警察官方清單。  
-Warns as you approach a speed camera in Japan, lists cameras along a driving route, then hands turn-by-turn directions to Google Maps. You can also search the nationwide points and export them to Google My Maps. This is not an official police list.
+同一個倉庫裡有兩個專案：網站，以及 Android App「日本測速導航」。開車接近測速點時會警示，也可先列出路線沿途的測速，再交給 Google 地圖轉彎。網站還能搜尋全國位置，匯出到 Google 我的地圖。不是警察官方清單。  
+One repository, two projects: this website, and the Android app “Japan Speed Navigation”. Both warn as you approach a camera and can list cameras along a route before Google Maps takes the turns. The website can also search the nationwide points and export them to Google My Maps. This is not an official police list.
 
 資料時間 Data as of：2026-10　·　目前 2,666 筆、47 個都道府縣　2,666 points across all 47 prefectures
+
+## 兩個專案放一起　Two projects in this repo
+
+測速點和免責說明只有一份，所以不另開倉庫。資料夾分開，網站和 App 不會混成同一個程式。  
+The camera list and the disclaimer live in one place, so this is not a second repository. The folders are separate, so the website and the app are not one program.
+
+<table>
+<tr>
+<th width="34%">資料夾　Folder</th>
+<th width="33%">是什麼　What it is</th>
+<th width="33%">怎麼啟動　How to run</th>
+</tr>
+<tr>
+<td valign="top"><code>package.json</code>、<code>src/</code><br>倉庫根目錄，沒有再包一層</td>
+<td valign="top">網站。搜尋、匯出 KML/CSV、瀏覽器裡的行車警示。</td>
+<td valign="top">安裝 Node.js 22，在根目錄執行 <code>npm install</code> 再 <code>npm run dev</code>。不要用 Android Studio 開這裡。</td>
+</tr>
+<tr>
+<td valign="top"><code>android/</code></td>
+<td valign="top">Android App「日本測速導航」。可浮在 Google 地圖上，小窗可拖移、可放大縮小。</td>
+<td valign="top">到 <a href="https://github.com/oktomy/brave-coral-earth-onyx/releases">Releases</a> 下載 APK。若要改程式，用 Android Studio 只開啟 <code>android</code> 資料夾。不要在這裡執行 <code>npm</code>。</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th width="50%">中文</th>
+<th width="50%">English</th>
+</tr>
+<tr>
+<td valign="top">
+
+網站在倉庫根目錄。Android App 只在 `android/`。`android/app/src/main/assets/cameras.json` 是網站 `src/data/cameras.json` 的精簡副本，給手機離線用。改測速點時要改網站那份，再重新產生 App 裡的副本。
+
+</td>
+<td valign="top">
+
+The website is the repository root. The Android app is only in `android/`. `android/app/src/main/assets/cameras.json` is a slim copy of the website’s `src/data/cameras.json` so the phone can work offline. Edit the website file when the points change, then regenerate the copy in the app.
+
+</td>
+</tr>
+</table>
+
+## 安裝 Android App　Install the Android app
+
+不是 Play 商店的程式。Android 8 以上可安裝。1.1 起，浮動小窗可以拖位置，也可以按 ＋、－ 改變大小。  
+This is not a Play Store app. It installs on Android 8 or newer. From 1.1, the floating window can be dragged, and ＋ / － changes its size.
+
+<table>
+<tr>
+<th width="50%">中文</th>
+<th width="50%">English</th>
+</tr>
+<tr>
+<td valign="top">
+
+1. 打開 [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases)，下載 `日本測速導航` 的 APK。
+2. 在手機打開該檔。若系統詢問，允許這次安裝。
+3. 若手機拒絕蓋過舊版，先移除舊的「日本測速導航」再裝。
+4. 允許定位和通知，按「開始警示」。人在日本、App 開著才會在路上響。
+5. 輸入目的地，按「列出沿途測速」，再按「用 Google 地圖導航」。
+6. 要讓警示留在地圖上，按「浮在 Google 地圖上」，並允許「顯示在其他應用程式上層」。按住小窗可拖移，＋ 放大，－ 縮小。
+7. 沒在日本時可按「試跑警示」聽一次示範。那不是你的定位。
+
+要用 Android Studio 改程式時，只開啟 `android` 資料夾。網站的 `npm run dev` 不會產生這個 APK。
+
+</td>
+<td valign="top">
+
+1. Open [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases) and download the `日本測速導航` APK.
+2. Open the file on the phone. If Android asks, allow this install.
+3. If the phone refuses to replace an older copy, remove the old “日本測速導航” app and install again.
+4. Allow location and notifications, then tap Start warning. You need to be in Japan, with the app running, for it to alert on the road.
+5. Enter a destination, tap List cameras along the route, then Use Google Maps to navigate.
+6. To keep the alert on top of the map, tap Float above Google Maps and allow “display over other apps”. Drag the window to move it. ＋ makes it larger, － makes it smaller.
+7. Outside Japan, Demo plays one approach. That is not your position.
+
+To change the app in Android Studio, open only the `android` folder. The website’s `npm run dev` does not build this APK.
+
+</td>
+</tr>
+</table>
 
 ## 關於　About
 
@@ -46,11 +128,13 @@ A speed number is the posted limit on the nearby road, not the speed that trigge
 </tr>
 </table>
 
-## 下載後怎麼執行　Run it after you download the source
+## 下載後怎麼執行網站　Run the website after you download the source
 
-沒有可直接點兩下的程式。下載的是網站原始碼，要先裝 Node.js，再在解壓縮後的資料夾啟動。啟動後用瀏覽器開，不要關掉那個黑色視窗。
+下面這段只針對倉庫根目錄的網站。Android App 不要照這段做，請到 [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases) 下載 APK。  
+The steps below are only for the website at the repository root. Do not use them for the Android app. Download that APK from [Releases](https://github.com/oktomy/brave-coral-earth-onyx/releases).
 
-There is no double-click program. The download is the website source. Install Node.js, start it in the unzipped folder, then open a browser. Leave the terminal window open.
+網站沒有可直接點兩下的程式。下載的是原始碼，要先裝 Node.js，再在解壓縮後的資料夾啟動。啟動後用瀏覽器開，不要關掉那個黑色視窗。  
+There is no double-click program for the website. The download is source code. Install Node.js, start it in the unzipped folder, then open a browser. Leave the terminal window open.
 
 <table>
 <tr>
