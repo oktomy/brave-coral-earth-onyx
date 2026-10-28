@@ -9,3 +9,6 @@ This is the Android app, not the website. The website is `src/` at the repositor
 - To edit: open only this `android` folder in Android Studio. Do not run `npm` here.
 - 測速點：`app/src/main/assets/cameras.json` 是網站 `src/data/cameras.json` 的精簡副本。
 - Camera data: `app/src/main/assets/cameras.json` is a slim copy of the website’s `src/data/cameras.json`.
+- 試用回饋請開 [Issue](https://github.com/oktomy/brave-coral-earth-onyx/issues/new/choose)。需要精確位置、通知；小窗另外需要「顯示在其他應用程式上層」。
+- Feedback: open an [Issue](https://github.com/oktomy/brave-coral-earth-onyx/issues/new/choose). Precise location and notifications are required. The floating window also needs “display over other apps”.
+

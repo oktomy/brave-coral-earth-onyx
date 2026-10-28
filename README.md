@@ -5,6 +5,84 @@ One repository, two projects: this website, and the Android app “Japan Speed N
 
 資料時間 Data as of：2026-10　·　目前 2,666 筆、47 個都道府縣　2,666 points across all 47 prefectures
 
+## 請幫忙測試　Please test it
+
+Android 8 以上可以直接裝 [v1.1 APK](https://github.com/oktomy/brave-coral-earth-onyx/releases/tag/v1.1)。用了之後請開 [Issue](https://github.com/oktomy/brave-coral-earth-onyx/issues/new/choose) 回報。不需要會寫程式。  
+Android 8 or newer can install the [v1.1 APK](https://github.com/oktomy/brave-coral-earth-onyx/releases/tag/v1.1). After you try it, open an [Issue](https://github.com/oktomy/brave-coral-earth-onyx/issues/new/choose). You do not need to write code.
+
+網站目前沒有公開網址。會下原始碼的人才能在自己的電腦跑。iPhone 不能裝這個 APK。  
+There is no public website address yet. Only someone who can run the source can open the site. iPhones cannot install this APK.
+
+<table>
+<tr>
+<th width="50%">測試時手機要允許　Permissions a tester must allow</th>
+<th width="50%">What the phone asks for</th>
+</tr>
+<tr>
+<td valign="top">
+
+這些是系統會問的項目。不開帳號，也沒有把行車軌跡上傳到這個專案。
+
+1. **安裝不明應用程式**：因為不是 Play 商店。只允許你用來開啟 APK 的那個 App，例如 Chrome 或檔案。
+2. **精確位置**：必要。按「開始警示」後，前景服務會持續讀位置，才能在接近時出聲。拒絕就不會響。
+3. **通知**（Android 13 以上）：必要。用來把警示留在前景。關掉通知，系統可能把警示一起關掉。
+4. **顯示在其他應用程式上層**：只有要小窗浮在 Google 地圖上才需要。不開仍可在 App 裡聽警示。
+5. **電池改成無限制**：小米、OPPO、vivo、三星常在背景殺掉定位。到該 App 的電池設定，選無限制或不最佳化。這不是安裝時的權限，但沒設常常會沒聲音。
+6. **網路**：只有按「列出沿途測速」才需要。目的地文字會送到 Photon（photon.komoot.io），路線會送到公開的 OSRM（router.project-osrm.org）。測速點清單在手機裡，不靠這兩個服務。
+7. 手機要已安裝 **Google 地圖**，才能把轉彎導航交出去。
+
+</td>
+<td valign="top">
+
+The system asks for these. There is no account, and the driving track is not uploaded to this project.
+
+1. **Install unknown apps.** It is not on the Play Store. Allow it only for the app you use to open the APK, such as Chrome or Files.
+2. **Precise location.** Required. After you tap Start warning, a foreground service keeps reading location so it can speak as you approach. If you deny it, there is no alert.
+3. **Notifications** (Android 13+). Required to keep that service in the foreground. Turning notifications off can stop the alert.
+4. **Display over other apps.** Only for the window that floats on Google Maps. Without it, alerts still work inside the app.
+5. **Unrestricted battery.** Xiaomi, OPPO, vivo, and Samsung often kill background location. Set this app’s battery to Unrestricted. That setting is not an install permission, but without it the alert often goes silent.
+6. **Network.** Used only when you list cameras along a route. The destination text goes to Photon (photon.komoot.io). The route goes to the public OSRM server (router.project-osrm.org). The camera list is on the phone and does not use those services.
+7. **Google Maps** must already be installed if you want it to take the turns.
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th width="50%">現在還缺、不必重複回報　Already missing</th>
+<th width="50%">Known gaps</th>
+</tr>
+<tr>
+<td valign="top">
+
+- 沒有 Play 商店版。APK 是偵錯簽章，Play 保護可能攔截。
+- 沒有 iPhone / iPad App。
+- 網站沒有公開網址，也不能在背景一直響。
+- 人在日本以外對不到這些點。請按「試跑警示」，那不是你的位置。
+- 不是警察清單。指南地圖常常差 100–200 公尺。有些縣本來就很少點。
+- App 畫面是繁體中文，沒有英文介面。
+- App 裡還沒有「回報此點」按鈕，請用 GitHub Issue。
+
+請特別回報：卡在哪一個權限、哪一牌手機、漏掉的測速（路名和大約位置）、不該響卻響了、小窗不能拖或被地圖蓋住、沿途清單和實際走的路差很多。
+
+</td>
+<td valign="top">
+
+- There is no Play Store build. The APK is debug-signed, so Play Protect may block it.
+- There is no iPhone or iPad app.
+- The website has no public address, and it cannot keep alerting in the background.
+- Outside Japan the points will not match your road. Use Demo. That is not your position.
+- This is not a police list. Guide-map pins are often 100–200 metres off. Some prefectures really do have very few points.
+- The app screen is Traditional Chinese only.
+- There is no in-app “report this point” button yet. Use a GitHub Issue.
+
+Please report: which permission blocked you, the phone brand, a missing camera (road and rough place), an alert that should not have fired, a floating window that will not drag or sits under the map, and a route list that does not match the road you drove.
+
+</td>
+</tr>
+</table>
+
 ## 兩個專案放一起　Two projects in this repo
 
 測速點和免責說明只有一份，所以不另開倉庫。資料夾分開，網站和 App 不會混成同一個程式。  
